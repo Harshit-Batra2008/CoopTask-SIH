@@ -74,7 +74,7 @@ export function WorkerJobs({ onNavigate }) {
               </div>
               
               <div className="ct-flex ct-justify-between ct-items-center ct-mt-4 ct-pt-3 ct-border-t ct-text-sm">
-                <span className="ct-text-muted">{formatDate(job.timestamps.created)}</span>
+                <span className="ct-text-muted">{formatDate(job.timestamps?.created)}</span>
                 {job.reviewed && (
                   <div className="ct-flex ct-items-center ct-text-amber-500">
                     <Star size={14} className="ct-fill-amber-500 ct-mr-1" />

@@ -38,7 +38,7 @@ export function CustomerRequests({ onNavigate }) {
     }
     
     return true;
-  }).sort((a, b) => b.timestamps.created - a.timestamps.created);
+  }).sort((a, b) => (b.timestamps?.created || 0) - (a.timestamps?.created || 0));
 
   return (
     <div className="ct-page">
@@ -108,7 +108,7 @@ export function CustomerRequests({ onNavigate }) {
                   </div>
                   <div className="ct-flex ct-items-center ct-gap-2">
                     <Clock size={16} />
-                    <span>{formatRelativeTime(req.timestamps.created)}</span>
+                    <span>{formatRelativeTime(req.timestamps?.created)}</span>
                   </div>
                 </div>
               </div>

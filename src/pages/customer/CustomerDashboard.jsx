@@ -34,7 +34,7 @@ export function CustomerDashboard({ onNavigate }) {
   const activeRequests = requests.filter(r => !['COMPLETED', 'CANCELLED', 'REJECTED'].includes(r.status));
   const recentCompleted = requests
     .filter(r => ['COMPLETED', 'CANCELLED'].includes(r.status))
-    .sort((a, b) => b.timestamps.created - a.timestamps.created)
+    .sort((a, b) => (b.timestamps?.created || 0) - (a.timestamps?.created || 0))
     .slice(0, 5);
 
   return (
@@ -97,7 +97,7 @@ export function CustomerDashboard({ onNavigate }) {
                         <h3 className="ct-font-semibold">{req.serviceType}</h3>
                         <div className="ct-flex ct-items-center ct-text-sm ct-text-muted ct-mt-1">
                           <Clock size={14} className="ct-mr-1" />
-                          {formatRelativeTime(req.timestamps.created)}
+                          {formatRelativeTime(req.timestamps?.created)}
                         </div>
                       </div>
                     </div>
@@ -149,7 +149,7 @@ export function CustomerDashboard({ onNavigate }) {
                     </div>
                     <div>
                       <h4 className="ct-font-medium">{req.serviceType}</h4>
-                      <p className="ct-text-xs ct-text-muted">{formatRelativeTime(req.timestamps.created)}</p>
+                      <p className="ct-text-xs ct-text-muted">{formatRelativeTime(req.timestamps?.created)}</p>
                     </div>
                   </div>
                   <StatusBadge status={req.status} size="sm" />

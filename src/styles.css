@@ -9,19 +9,19 @@
   --ct-primary: #1B5E3B;
   --ct-primary-hover: #17512f;
   --ct-primary-light: #276b45;
-  --ct-primary-lighter: #eaf4ed;
-  --ct-primary-bg: #f3f6f2;
+  --ct-primary-lighter: #F2F7F4;
+  --ct-primary-bg: #F9FBF9;
 
   /* Neutral palette */
-  --ct-bg: #F8FAF7;
+  --ct-bg: #F9FAFB;
   --ct-white: #FFFFFF;
-  --ct-border: #e1e7e1;
-  --ct-border-light: #edf0ed;
+  --ct-border: #E5E7EB;
+  --ct-border-light: #F3F4F6;
 
   /* Text */
-  --ct-text: #172019;
-  --ct-text-secondary: #5e685f;
-  --ct-text-muted: #78837a;
+  --ct-text: #111827;
+  --ct-text-secondary: #4B5563;
+  --ct-text-muted: #6B7280;
 
   /* Semantic */
   --ct-success: #16a34a;
@@ -46,11 +46,11 @@
   --ct-space-16: 64px;
 
   /* Radius */
-  --ct-radius-sm: 6px;
-  --ct-radius: 8px;
-  --ct-radius-md: 10px;
-  --ct-radius-lg: 12px;
-  --ct-radius-xl: 16px;
+  --ct-radius-sm: 4px;
+  --ct-radius: 6px;
+  --ct-radius-md: 6px;
+  --ct-radius-lg: 8px;
+  --ct-radius-xl: 12px;
   --ct-radius-full: 999px;
 
   /* Shadows */
@@ -169,7 +169,7 @@ a:hover {
   width: 32px;
   height: 32px;
   background: var(--ct-primary);
-  border-radius: var(--ct-radius);
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1192,9 +1192,7 @@ a:hover {
   border-bottom: none;
 }
 
-.ct-table tr:hover td {
-  background: var(--ct-primary-bg);
-}
+.ct-table tr:hover td { background: #F9FAFB; }
 
 /* --- Toast --- */
 .ct-toast-container {
@@ -1356,13 +1354,9 @@ a:hover {
   transition: background var(--ct-transition);
 }
 
-.ct-notif:hover {
-  background: var(--ct-primary-bg);
-}
+.ct-notif:hover { background: #F9FAFB; }
 
-.ct-notif.unread {
-  background: rgba(27, 94, 59, 0.03);
-}
+.ct-notif.unread { background: #F3F4F6; }
 
 .ct-notif-content { flex: 1; min-width: 0; }
 
@@ -1693,7 +1687,8 @@ a:hover {
 
 /* --- Demo Banner --- */
 .ct-demo-banner {
-  background: var(--ct-primary-lighter);
+  background: var(--ct-white);
+  border-bottom: 1px solid var(--ct-border);
   padding: var(--ct-space-2) var(--ct-space-4);
   font-size: var(--ct-font-size-xs);
   color: var(--ct-primary);
@@ -1715,7 +1710,7 @@ a:hover {
   align-items: center;
   gap: var(--ct-space-2);
   padding: var(--ct-space-2) var(--ct-space-3);
-  background: var(--ct-primary-bg);
+  background: #F3F4F6;
   border-radius: var(--ct-radius);
   border: 1px solid var(--ct-border);
 }

@@ -28,8 +28,8 @@ export function AdminRequests({ onNavigate }) {
       }
       return true;
     }).sort((a, b) => {
-      const timeA = a.timestamps?.created || new Date(a.timestamp).getTime();
-      const timeB = b.timestamps?.created || new Date(b.timestamp).getTime();
+      const timeA = a.timestamps?.created || 0;
+      const timeB = b.timestamps?.created || 0;
       return timeB - timeA;
     });
   }, [requests, filter, search]);
@@ -80,7 +80,7 @@ export function AdminRequests({ onNavigate }) {
                 <tbody>
                   {filteredRequests.map(req => {
                     const worker = req.assignedWorkerId ? getWorkerById(req.assignedWorkerId) : null;
-                    const time = req.timestamps?.created || new Date(req.timestamp).getTime();
+                    const time = req.timestamps?.created || 0;
                     return (
                       <tr key={req.id} onClick={() => setSelectedRequest(req)} className="cursor-pointer hover:bg-gray-50">
                         <td className="ct-text-sm ct-font-medium">{req.id}</td>
@@ -101,7 +101,7 @@ export function AdminRequests({ onNavigate }) {
             <div className="md:hidden flex flex-col gap-4">
               {filteredRequests.map(req => {
                 const worker = req.assignedWorkerId ? getWorkerById(req.assignedWorkerId) : null;
-                const time = req.timestamps?.created || new Date(req.timestamp).getTime();
+                const time = req.timestamps?.created || 0;
                 return (
                   <div key={req.id} className="border border-gray-100 rounded-lg p-4 cursor-pointer hover:bg-gray-50" onClick={() => setSelectedRequest(req)}>
                     <div className="flex justify-between items-start mb-2">
@@ -130,7 +130,7 @@ export function AdminRequests({ onNavigate }) {
         {selectedRequest && (() => {
           const worker = selectedRequest.assignedWorkerId ? getWorkerById(selectedRequest.assignedWorkerId) : null;
           const match = selectedRequest.matches?.find(m => m.workerId === selectedRequest.assignedWorkerId);
-          const time = selectedRequest.timestamps?.created || new Date(selectedRequest.timestamp).getTime();
+          const time = selectedRequest.timestamps?.created || 0;
           
           return (
             <div className="flex flex-col gap-6">

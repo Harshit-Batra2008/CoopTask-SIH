@@ -71,7 +71,7 @@ export function AppProvider({ children }) {
   // Load state on mount
   useEffect(() => {
     const loaded = loadState();
-    if (loaded && loaded.workers && loaded.workers.length > 0) {
+    if (loaded && loaded.workers && loaded.workers.length > 0 && loaded.requests.every(r => r.timestamps)) {
       dispatch({ type: 'INIT_STATE', payload: loaded });
     } else {
       const seed = getInitialState();
@@ -90,6 +90,12 @@ export function AppProvider({ children }) {
   }, [state]);
 
   // --- Action Helpers ---
+  const setRole = useCallback((role) => {
+  dispatch({ type: 'SET_ROLE', payload: role });
+  }, []);
+  const setActiveWorker = useCallback((workerId) => {
+  dispatch({ type: 'SET_ACTIVE_WORKER', payload: workerId });
+  }, []);
   const addNotification = useCallback((type, title, message, role, extra = {}) => {
     const notification = {
       id: 'n-' + Date.now() + '-' + Math.floor(Math.random() * 1000),

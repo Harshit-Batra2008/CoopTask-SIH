@@ -193,7 +193,7 @@ export function WorkerJobDetail({ requestId, onNavigate }) {
             <CheckCircle size={40} className="ct-text-green-500 ct-mb-2" />
             <h3 className="ct-font-semibold ct-text-green-700">Job Completed</h3>
             <p className="ct-text-sm ct-text-green-600 ct-mt-1">
-              Completed on {formatDate(request.timestamps.completed)}
+              Completed on {formatDate(request.timestamps?.completed)}
             </p>
           </div>
         </div>
@@ -206,28 +206,28 @@ export function WorkerJobDetail({ requestId, onNavigate }) {
             <div className="ct-timeline-item ct-relative">
               <div className="ct-absolute -ct-left-[25px] ct-w-3 ct-h-3 ct-bg-gray-300 ct-rounded-full ct-mt-1"></div>
               <div className="ct-text-sm ct-font-medium">Request Created</div>
-              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps.created)}</div>
+              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps?.created)}</div>
             </div>
           )}
           {request.timestamps?.accepted && (
             <div className="ct-timeline-item ct-relative">
               <div className="ct-absolute -ct-left-[25px] ct-w-3 ct-h-3 ct-bg-blue-400 ct-rounded-full ct-mt-1"></div>
               <div className="ct-text-sm ct-font-medium">Accepted</div>
-              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps.accepted)}</div>
+              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps?.accepted)}</div>
             </div>
           )}
           {request.timestamps?.started && (
             <div className="ct-timeline-item ct-relative">
               <div className="ct-absolute -ct-left-[25px] ct-w-3 ct-h-3 ct-bg-amber-400 ct-rounded-full ct-mt-1"></div>
               <div className="ct-text-sm ct-font-medium">Started</div>
-              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps.started)}</div>
+              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps?.started)}</div>
             </div>
           )}
           {request.timestamps?.completed && (
             <div className="ct-timeline-item ct-relative">
               <div className="ct-absolute -ct-left-[25px] ct-w-3 ct-h-3 ct-bg-green-500 ct-rounded-full ct-mt-1"></div>
               <div className="ct-text-sm ct-font-medium">Completed</div>
-              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps.completed)}</div>
+              <div className="ct-text-xs ct-text-muted">{formatDate(request.timestamps?.completed)}</div>
             </div>
           )}
         </div>

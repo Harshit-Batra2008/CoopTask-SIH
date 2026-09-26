@@ -12,8 +12,8 @@ export function AdminOverview({ onNavigate }) {
   
   const recentRequests = [...requests]
     .sort((a, b) => {
-      const timeA = a.timestamps?.created || new Date(a.timestamp).getTime();
-      const timeB = b.timestamps?.created || new Date(b.timestamp).getTime();
+      const timeA = a.timestamps?.created || 0;
+      const timeB = b.timestamps?.created || 0;
       return timeB - timeA;
     })
     .slice(0, 10);
@@ -99,7 +99,7 @@ export function AdminOverview({ onNavigate }) {
             </thead>
             <tbody>
               {recentRequests.map(req => {
-                const time = req.timestamps?.created || new Date(req.timestamp).getTime();
+                const time = req.timestamps?.created || 0;
                 return (
                   <tr key={req.id} onClick={() => onNavigate?.('requests')} className="cursor-pointer hover:bg-gray-50 transition-colors">
                     <td className="ct-text-sm ct-font-medium">{req.id}</td>

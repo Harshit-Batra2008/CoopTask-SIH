@@ -89,8 +89,8 @@ export function RequestDetail({ requestId, onNavigate }) {
           <div className="ct-flex ct-items-start ct-gap-3">
             <Calendar size={18} className="text-gray-400 mt-0.5" />
             <div>
-              <p className="ct-text-sm ct-font-medium">{formatDate(request.timestamps.created)}</p>
-              <p className="ct-text-sm ct-text-muted">at {formatTime(request.timestamps.created)}</p>
+              <p className="ct-text-sm ct-font-medium">{formatDate(request.timestamps?.created)}</p>
+              <p className="ct-text-sm ct-text-muted">at {formatTime(request.timestamps?.created)}</p>
             </div>
           </div>
 
@@ -161,7 +161,7 @@ export function RequestDetail({ requestId, onNavigate }) {
           <div className="ct-timeline-item relative pb-6 border-l-2 border-green-500 pl-4">
             <div className="ct-timeline-dot absolute w-3 h-3 bg-green-500 rounded-full -left-[7px] top-1"></div>
             <p className="ct-timeline-title font-medium text-sm">Request Created</p>
-            <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps.created)}</p>
+            <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps?.created)}</p>
           </div>
           
           {request.matches?.length > 0 && (
@@ -172,33 +172,33 @@ export function RequestDetail({ requestId, onNavigate }) {
           )}
           
           {request.assignedWorkerId && (
-            <div className={`ct-timeline-item relative pb-6 border-l-2 ${request.timestamps.accepted ? 'border-green-500' : 'border-gray-200'} pl-4`}>
+            <div className={`ct-timeline-item relative pb-6 border-l-2 ${request.timestamps?.accepted ? 'border-green-500' : 'border-gray-200'} pl-4`}>
               <div className="ct-timeline-dot absolute w-3 h-3 bg-green-500 rounded-full -left-[7px] top-1"></div>
               <p className="ct-timeline-title font-medium text-sm">Worker Assigned</p>
             </div>
           )}
           
-          {request.timestamps.accepted && (
-            <div className={`ct-timeline-item relative pb-6 border-l-2 ${request.timestamps.started ? 'border-green-500' : 'border-gray-200'} pl-4`}>
+          {request.timestamps?.accepted && (
+            <div className={`ct-timeline-item relative pb-6 border-l-2 ${request.timestamps?.started ? 'border-green-500' : 'border-gray-200'} pl-4`}>
               <div className="ct-timeline-dot absolute w-3 h-3 bg-green-500 rounded-full -left-[7px] top-1"></div>
               <p className="ct-timeline-title font-medium text-sm">Worker Accepted</p>
-              <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps.accepted)}</p>
+              <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps?.accepted)}</p>
             </div>
           )}
 
-          {request.timestamps.started && (
-            <div className={`ct-timeline-item relative pb-6 border-l-2 ${request.timestamps.completed ? 'border-green-500' : 'border-gray-200'} pl-4`}>
+          {request.timestamps?.started && (
+            <div className={`ct-timeline-item relative pb-6 border-l-2 ${request.timestamps?.completed ? 'border-green-500' : 'border-gray-200'} pl-4`}>
               <div className="ct-timeline-dot absolute w-3 h-3 bg-green-500 rounded-full -left-[7px] top-1"></div>
               <p className="ct-timeline-title font-medium text-sm">Service Started</p>
-              <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps.started)}</p>
+              <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps?.started)}</p>
             </div>
           )}
 
-          {request.timestamps.completed && (
+          {request.timestamps?.completed && (
             <div className="ct-timeline-item relative pl-4">
               <div className="ct-timeline-dot absolute w-3 h-3 bg-green-500 rounded-full -left-[7px] top-1"></div>
               <p className="ct-timeline-title font-medium text-sm">Service Completed</p>
-              <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps.completed)}</p>
+              <p className="ct-timeline-time text-xs text-gray-500">{formatTime(request.timestamps?.completed)}</p>
             </div>
           )}
         </div>

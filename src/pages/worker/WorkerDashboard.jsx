@@ -121,7 +121,7 @@ export function WorkerDashboard({ onNavigate }) {
                   <StatusBadge status={job.status} size="sm" />
                 </div>
                 <div className="ct-flex ct-justify-between ct-items-center ct-mt-4 ct-pt-4 ct-border-t">
-                  <span className="ct-text-xs ct-text-muted">{formatRelativeTime(job.timestamps.created)}</span>
+                  <span className="ct-text-xs ct-text-muted">{formatRelativeTime(job.timestamps?.created)}</span>
                   <ChevronRight size={16} className="ct-text-muted" />
                 </div>
               </div>

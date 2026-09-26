@@ -12,7 +12,7 @@ export function TopBar({ title, onMenuClick, onNotificationsClick }) {
     ? 'Admin'
     : (customer?.name || 'User');
 
-  const initials = displayName.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+  const initials = 'CC'; // CodeCooperatives
 
   return (
     <header className="ct-topbar">
