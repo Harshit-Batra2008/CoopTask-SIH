@@ -629,6 +629,7 @@ It is to create a **coordination infrastructure for cooperative workforces**.
 **Project:** CoopTask  
 **Team:** CodeCooperatives  
 **Event:** Smart India Hackathon 2026  
+**Problem Statement ID:** 26089
 **Status:** Functional Prototype / Demo
 
 ---
